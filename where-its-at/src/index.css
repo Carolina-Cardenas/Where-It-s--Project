@@ -1,0 +1,30 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Principal colors */
+  --bg-primary: #1E1A38;
+  --accent-primary: #E96890;
+  --accent-secondary: #33C7B2;
+
+
+  /* Seconds colors */
+  --text-light: #FFFFFF;
+  --text-muted: #988FB0;
+  --border-color: #39335A;
+
+
+  /* Estados */
+  --button-hover: #2AAAA0;
+  --accent-hover: #D55980;
+
+
+  color: var(--text-light);
+  background-color: var(--bg-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
