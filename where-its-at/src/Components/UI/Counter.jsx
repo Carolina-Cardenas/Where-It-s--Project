@@ -12,11 +12,11 @@ const Counter = () => {
     return counter;
   };
   return (
-    <div>
+    <section>
       <h1>Counter: {result()}</h1>
       <button onClick={increment}>Incrementar</button>
       <button onClick={decrement}>Decrementar</button>
-    </div>
+    </section>
   );
 };
 
