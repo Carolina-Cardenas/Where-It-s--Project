@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function FetchEventsComponent() {
+export const useEvents = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [events, setEvents] = useState([]);
   const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ function FetchEventsComponent() {
         const response = await axios.get(
           "https://santosnr6.github.io/Data/events.json"
         );
-        setEvents(response.data);
+        setEvents(response.data.events || []);
       } catch (error) {
         setError(
           `The events could not be loaded. Please try again later. ${error.message}`
@@ -27,24 +27,5 @@ function FetchEventsComponent() {
     fetchEvents();
   }, []);
 
-  if (isLoading) {
-    return <p>Loading Event...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  return (
-    <div>
-      <h1>Event List</h1>
-      <ul>
-        {events.map((event, index) => (
-          <li key={index}>{event.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default FetchEventsComponent;
+  return { isLoading, events, error };
+};

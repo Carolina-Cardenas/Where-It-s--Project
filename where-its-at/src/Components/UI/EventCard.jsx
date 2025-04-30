@@ -1,8 +1,11 @@
-import Counter from " ./Counter";
 import SearchBar from "./SearchBar";
 import Pagination from "./Pagination";
+import Counter from "./Counter";
+import { Link } from "react-router-dom";
 
-function EventCard() {
+function EventCard({ event }) {
+  if (!event || !event.when) return null;
+
   return (
     <section className="event-card">
       <article className="event-card__date">
@@ -12,13 +15,12 @@ function EventCard() {
       </article>
       <div className="event-card__info">
         <h1 className="event-title">Event</h1>
-        <h3 className="event-card__title">{event.title}</h3>
-        <p>{event.id}</p>
-        <p>{event.name}</p>
-        <p>{event.where}</p>
-        <p>{event.price}sek </p>
-
+        <h3 className="event-card__title">{event.title || event.name}</h3>
+        <p>ID: {event.id}</p>
+        <p>Name: {event.name}</p>
+        <p>Location: {event.where}</p>
         <p className="event-card__price">{event.price} sek</p>
+
         <Link to={`/event/${event.id}`} className="event-card__button">
           View Details
         </Link>
