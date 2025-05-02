@@ -1,0 +1,74 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Sansita One', Arial, sans-serif;
+}
+
+.event-card__container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.event-card {
+    display: flex;
+    gap: 3rem;
+    background-color: transparent;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #666;
+    color: var(--clr-white);
+}
+
+.event-card__date {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    justify-content: flex-start;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 0.5rem;
+    line-height: 1.2;
+    font-weight: bold;
+    font-size: 1rem;
+    align-items: center;
+}
+
+.event-card__time {
+    font-size: 1.2rem;
+    color: #D0D0D0;
+    font-weight: bold;
+}
+
+.event__title {
+    font-size: 2.5rem;
+    color: #F56B9A;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.event-card__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 0px #d93a88;
+}
+
+.event-card__price {
+    display: flex;
+    flex-direction: row;
+    color: #56d1c1;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.p {
+    font-size: 1rem;
+    color: #D0D0D0;
+    margin-top: 0.5rem;
+
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEvents } from "./Server/Api";
 import EventList from "./Components/Features/EventList";
 import Barcode from "./Components/UI/Barcode";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
   const { events, isLoading, error } = useEvents();

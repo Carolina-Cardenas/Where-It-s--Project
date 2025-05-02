@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEvents } from "./server/Api";
 import BarcodeComponent from "../components/Barcode";
+import "./TicketPage.css";
 
 function TicketPage() {
   const { id } = useParams();
@@ -14,9 +15,9 @@ function TicketPage() {
   if (!selectedEvent) return <p>Event not found</p>;
 
   return (
-    <div className="ticket-page">
+    <select className="ticket-page">
       <BarcodeComponent event={selectedEvent} />
-    </div>
+    </select>
   );
 }
 

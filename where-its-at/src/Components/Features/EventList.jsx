@@ -2,15 +2,19 @@ import EventCard from "../UI/EventCard";
 
 const EventList = ({ events, onSelectEvent }) => {
   return (
-    <div className="event-list">
-      {events.map((event) => (
-        <EventCard
-          key={event.id}
-          event={event}
-          onClick={() => onSelectEvent(event)}
-        />
-      ))}
-    </div>
+    <section className="event-card__container">
+      <h1 className="event__title">Events</h1>
+      <ul>
+        {events.length === 0 && <p>No events available</p>}
+        {events.map((event) => (
+          <EventCard
+            key={event.id}
+            event={event}
+            onClick={() => onSelectEvent(event)}
+          />
+        ))}
+      </ul>
+    </section>
   );
 };
 

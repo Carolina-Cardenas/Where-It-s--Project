@@ -1,16 +1,19 @@
+import React from "react";
 import Barcode from "react-barcode";
 
 const BarcodeComponent = ({ event }) => {
   if (!event) return <p>No event selected</p>;
 
   return (
-    <div className="barcode-wrapper">
-      <h2>{event.name}</h2>
+    <section className="ticket">
+      <article className="ticket__header" />
+      <h1 className="ticket__title">Ticket</h1>
+      <p className="">{event.name}</p>
       <p>
         {event.when.date} at {event.where}
       </p>
       <Barcode value={event.id} format="CODE128" />
-    </div>
+    </section>
   );
 };
 

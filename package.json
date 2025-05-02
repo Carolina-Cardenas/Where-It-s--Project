@@ -2,6 +2,7 @@
   "dependencies": {
     "axios": "^1.9.0",
     "framer-motion": "^12.9.2",
-    "react-barcode": "^1.6.1"
+    "react-barcode": "^1.6.1",
+    "react-confetti": "^6.4.0"
   }
 }

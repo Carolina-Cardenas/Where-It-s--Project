@@ -1,13 +1,10 @@
+import "../../styles/Pagination.css";
+
 function PaginationDots({ total, current }) {
   return (
-    <section className="flex justify-center gap-2 mt-4">
+    <section className="pagination-dots">
       {Array.from({ length: total }).map((_, i) => (
-        <span
-          key={i}
-          className={`w-3 h-3 rounded-full transition-all ${
-            i === current ? "bg-pink-500" : "bg-gray-300"
-          }`}
-        />
+        <span key={i} className={`dot ${i === current ? "dot--active" : ""}`} />
       ))}
     </section>
   );
