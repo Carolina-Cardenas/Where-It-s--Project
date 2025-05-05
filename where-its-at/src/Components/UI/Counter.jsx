@@ -1,23 +1,11 @@
-import { useState } from "react";
-
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
-  const increment = () => {
-    setCounter(counter + 1);
-  };
-  const decrement = () => {
-    setCounter(counter - 1);
-  };
-  const result = () => {
-    return counter;
-  };
+function Counter({ quantity, onIncrement, onDecrement }) {
   return (
-    <section>
-      <h1>Counter: {result()}</h1>
-      <button onClick={increment}>Incrementar</button>
-      <button onClick={decrement}>Decrementar</button>
-    </section>
+    <secrtion className="counter">
+      <button onClick={onDecrement}>-</button>
+      <span>{quantity}</span>
+      <button onClick={onIncrement}>+</button>
+    </secrtion>
   );
-};
+}
 
 export default Counter;

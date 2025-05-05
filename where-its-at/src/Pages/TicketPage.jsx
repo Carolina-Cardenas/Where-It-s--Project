@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useEvents } from "./server/Api";
-import BarcodeComponent from "../components/Barcode";
-import "./TicketPage.css";
+import { useEvents } from "../Server/Api";
+import Barcode from "../Components/UI/Barcode";
+import "../Styles/TicketPage.css";
 
 function TicketPage() {
   const { id } = useParams();
@@ -16,7 +16,7 @@ function TicketPage() {
 
   return (
     <select className="ticket-page">
-      <BarcodeComponent event={selectedEvent} />
+      <Barcode event={selectedEvent} />
     </select>
   );
 }
