@@ -1,9 +1,10 @@
 .order-page {
     flex: 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     max-width: 400px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    background-color: #1e1635;
     text-align: center;
 }
 
@@ -21,7 +22,13 @@
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
-    background-color: #1e1635;
+
+}
+
+.order-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
 .order-item h2 {
@@ -55,6 +62,16 @@
     padding: 0.5rem 0;
     cursor: pointer;
     font-weight: bold;
+}
+
+.counter button:hover {
+    background-color: #d97bdb;
+}
+
+.counter .quantity {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .counter span {

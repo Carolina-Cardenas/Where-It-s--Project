@@ -72,3 +72,14 @@ html {
     margin-top: 0.5rem;
 
 }
+
+.event-card__button {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.event-card__button:hover {
+    text-decoration: underline;
+    color: #F56B9A;
+}

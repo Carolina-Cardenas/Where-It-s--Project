@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import EventCard from "../UI/EventCard";
+import useEventStore from "../../Stores/EventStore";
 
-const EventList = ({ events, onSelectEvent }) => {
+const EventList = ({ onSelectEvent }) => {
+  const { events, fetchEvents } = useEventStore();
+  useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
+
   return (
     <section className="event-card__container">
       <h1 className="event__title">Events</h1>
