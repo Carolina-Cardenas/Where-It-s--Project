@@ -1,86 +1,153 @@
 .order-page {
-    flex: 1;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
 }
 
 .page-title {
+    font-family: 'Sansita One', Arial, sans-serif;
     font-size: 2rem;
     font-weight: bold;
     font-style: italic;
     color: #F56B9A;
     margin-bottom: 2rem;
+
 }
 
 /* CARD DE ITEM */
-.order-item {
-    color: #F56B9A;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
 
-}
-
-.order-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.order-item h2 {
-    font-size: 1.3rem;
-    color: #F56B9A;
-    margin: 0 0 0.2rem;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.order-item .date {
+/* .order-item .date {
     font-size: 0.9rem;
     color: #65d0c9;
     margin-bottom: 0.8rem;
 }
 
-/* CONTADOR */
-.counter {
+.order-items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border-top: 1px solid #F56B9A;
-    border-bottom: 1px solid #F56B9A;
-    ;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    grid-template-rows: auto auto;
+    margin: 0 auto;
 }
 
-.counter button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 0.5rem 0;
-    cursor: pointer;
+/* 🎤 Tarjeta de cada evento en la orden */
+/* .order-item {
+    grid-template-rows: auto auto;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    border: 2px solid #F56B9A;
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    overflow: hidden;
+} */
+
+
+
+/* 🎤 Nombre del evento */
+/* .order-item p:first-of-type {
+
+    flex-direction: column;
+    font-size: 1.6rem;
     font-weight: bold;
-}
+    color: #F56B9A
+} */
 
-.counter button:hover {
-    background-color: #d97bdb;
-}
-
-.counter .quantity {
-    font-size: 16px;
-    font-weight: bold;
+/*  Contador de boletos */
+/* .order-item__counter {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
     text-align: center;
-}
+} */
 
-.counter span {
+/* ➖ Botones de cantidad */
+/* .order-item__counter button,
+.order-item__counter span {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #f3a5c7;
+} 
+
+.ticket-cell {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    font-weight: bold;
     color: white;
+    font-size: 1.5rem;
+    height: 50px;
+}
+
+
+.ticket-cell:not(:last-child) {
+    border-right: 1px solid #f3a5c7;
+} */
+
+/* 
+.order-items {
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    overflow: hidden;
+}
+
+.order-item {
+    border: 2px solid #f3a5c7;
+    display: grid;
+    color: #F56B9A;
+    grid-template-columns: 1fr 2fr 1fr;
+    border-top: 1px solid #f3a5c7;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+} 
+
+
+
+.ticket-price {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid #f3a5c7;
+    text-shadow: 2px 2px 0px #ff89bb;
+}
+
+
+.ticket-counter-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #f3a5c7;
+}
+
+
+.ticket-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    height: 50px;
+}
+
+
+.ticket-cell:not(:last-child) {
+    border-right: 1px solid #f3a5c7;
 }
 
 /* TOTAL */

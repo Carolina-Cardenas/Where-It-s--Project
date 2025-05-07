@@ -21,13 +21,11 @@ function EventCard({ event }) {
 
       <div className="event-card__info">
         <Link to={`/event/${event.id}`} className="event-card__button">
-          <h1 className="event-card__title">{event.name}</h1>
-          {/* <p>ID: {event.id}</p> */}
+          <p className="event-card__title">{event.name}</p>
           <p> {event.where}</p>
           <span className="event-card__time">
             {event.when.from} to {event.when.to}
           </span>
-
           <p className="event-card__price">{event.price} sek</p>
         </Link>
       </div>

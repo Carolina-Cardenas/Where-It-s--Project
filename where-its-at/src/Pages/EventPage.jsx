@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import TicketCounter from "../Components/Features/EventCounter";
 import "../Styles/EventPage.css";
 import { useParams } from "react-router-dom";
-// import useCartStore from "../Stores/CartStore";
+import useCartStore from "../Stores/CartStore";
 import useEventStore from "../Stores/EventStore";
+import { useNavigate } from "react-router-dom";
 
 function EventPage() {
   const { id } = useParams();
-  const { fetchEvents, selectEvent, selectedEvent } = useEventStore();
-  // const { cart, addToCart, removeFromCart, clearCart } = useCartStore();
+  const { fetchEvents, selectEvent, selectedEvent, tickets } = useEventStore();
+  const { cart, addToCart, removeFromCart, clearCart } = useCartStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = async () => {
@@ -35,7 +37,15 @@ function EventPage() {
           </p>
           <p className="event-location">{selectedEvent.where}</p>
           <TicketCounter />
-          <button className="add-to-cart">Lägg i varukorgen</button>
+          <button
+            className="add-to-cart"
+            onClick={() => {
+              addToCart({ ...selectedEvent, quantity: tickets });
+              navigate("/order");
+            }}
+          >
+            Lägg i varukorgen
+          </button>
         </section>
       )}
     </section>

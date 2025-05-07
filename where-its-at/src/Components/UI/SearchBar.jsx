@@ -12,19 +12,21 @@ function SearchBar() {
   }
 
   return (
-    <form onSubmit={handleSearch} className="header__search-bar">
-      <input
-        className="header__input"
-        onChange={(event) => setSearchString(event.target.value)}
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-        value={searchString}
-      />
-      <button type="submit" className="header__form-btn">
-        Search
-      </button>
-    </form>
+    <section className="searchbar">
+      <form onSubmit={handleSearch} className="header__search-bar">
+        <input
+          className="header__input"
+          onChange={(event) => setSearchString(event.target.value)}
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          value={searchString}
+        />
+        <button type="submit" className="header__form-btn">
+          Search
+        </button>
+      </form>
+    </section>
   );
 }
 
