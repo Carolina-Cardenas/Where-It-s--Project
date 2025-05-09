@@ -1,16 +1,41 @@
-.LandingPage__footer {
+html,
+body {
+    height: 100%;
+    margin: 0;
+
+}
+
+main {
+    max-width: 100%;
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100%;
     position: relative;
+}
+
+
+.LandingPage__footer {
+    display: flex;
     gap: 2rem;
-    bottom: 0;
     width: 100%;
     background-color: #d9649c;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     padding: 1rem 0;
     z-index: 100;
     padding-bottom: 2rem;
     font-size: 1rem;
+    z-index: 100;
+
 }
 
 .LandingPage__footer nav {

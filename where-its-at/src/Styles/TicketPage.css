@@ -1,4 +1,4 @@
-body,
+/* body,
 html {
     margin: 0;
     padding: 0;
@@ -109,4 +109,66 @@ html {
     color: #666;
     font-weight: bold;
     font-size: 0.85rem;
+} */
+.ticket__content {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.ticket {
+    background: linear-gradient(to bottom, #d96da1, #2c256f);
+    color: #333;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    margin: auto;
+    font-family: "Arial", sans-serif;
+}
+
+.ticket__title {
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.ticket__what {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.8rem;
+    color: #d96da1;
+    text-align: center;
+}
+
+.ticket__where {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.ticket__when {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    border: 2px solid #cfc0fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.ticket__info {
+    text-align: center;
+    background: #eee;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.ticket__barcode {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.barcode-text {
+    font-size: 0.9rem;
+    color: #666;
 }

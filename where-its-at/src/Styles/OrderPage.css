@@ -7,6 +7,7 @@
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    height: 100vh;
 }
 
 .page-title {
@@ -18,6 +19,7 @@
     margin-bottom: 2rem;
 
 }
+
 .order-total {
     margin-top: 2rem;
     font-size: 1.1rem;

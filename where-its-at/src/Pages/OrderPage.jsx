@@ -71,13 +71,13 @@ function OrderPage() {
         <div className="total-price">{totalPrice} sek</div>
       </section>
 
-      {/* <button
+      <button
         className="checkout-button"
         onClick={handleCheckout}
         aria-label="Bekräfta och skicka din beställning"
       >
         Skicka order
-      </button> */}
+      </button>
     </section>
   );
 }

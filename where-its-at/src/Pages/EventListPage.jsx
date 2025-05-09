@@ -5,14 +5,19 @@ import SearchBar from "../Components/UI/SearchBar";
 import "../Styles/EventListPage.css";
 import EventList from "../Components/Features/EventList";
 import "../Styles/SearchBar.css";
-// import "../Styles/EventListPage.css";
+import { useNavigate } from "react-router-dom";
 
 function EventListPage() {
   const { events, fetchEvents } = useEventStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchEvents();
   }, [fetchEvents]);
+
+  const goToCart = () => {
+    navigate("/order");
+  };
 
   return (
     <section className="event-list-page">
@@ -25,6 +30,9 @@ function EventListPage() {
           events.map((event) => <EventCard key={event.id} event={event} />)
         )}
       </div>
+      <button className="event-list-btn" onClick={goToCart}>
+        Lägg till varukorgen
+      </button>
     </section>
   );
 }

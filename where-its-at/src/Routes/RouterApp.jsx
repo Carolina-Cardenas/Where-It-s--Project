@@ -7,6 +7,7 @@ import OrderPage from "../Pages/OrderPage";
 import EventList from "../Components/Features/EventList";
 import EventPage from "../Pages/EventPage";
 import EventListPage from "../Pages/EventListPage";
+import SearchResults from "../components/UI/SearchResult";
 
 const router = createBrowserRouter([
   {
@@ -15,9 +16,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> },
       { path: "events", element: <EventListPage /> },
-      { path: "ticket", element: <TicketPage /> },
       { path: "event/:id", element: <EventPage /> },
+      { path: "ticket", element: <TicketPage /> },
       { path: "order", element: <OrderPage /> },
+      { path: "/search/:query", element: <SearchResults /> },
     ],
   },
 ]);

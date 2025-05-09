@@ -2,7 +2,16 @@ import { NavLink, Outlet, useLocation, matchPath } from "react-router-dom";
 import Footer from "../UI/Footer";
 import "../../Styles/Layout.css";
 
-const footerRoutes = ["/", "/event/:id", "/ticket/:id", "/order/", "/events"];
+const footerRoutes = [
+  "/",
+  "/event/:id",
+  "/ticket/:id",
+  "/event/",
+  "/order",
+  "/events",
+  "/search/:query",
+  "/ticket",
+];
 
 function Layout() {
   const location = useLocation();
@@ -13,7 +22,9 @@ function Layout() {
 
   return (
     <section className="layout-container">
-      <Outlet />
+      <main className="layout-content">
+        <Outlet />
+      </main>
       {showFooter && (
         <footer className="LandingPage__footer">
           <nav>

@@ -23,6 +23,13 @@ function EventPage() {
 
   console.log("📦 selectedEvent:", selectedEvent);
 
+  useEffect(() => {
+    if (selectedEvent && tickets > 0) {
+      addToCart({ ...selectedEvent, quantity: tickets });
+      // navigate("/order");
+    }
+  }, [selectedEvent, tickets, addToCart, navigate]);
+
   return (
     <section className="event-page">
       <h1 className="event-title">Event</h1>

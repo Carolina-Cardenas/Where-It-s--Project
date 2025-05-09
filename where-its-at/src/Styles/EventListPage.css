@@ -15,3 +15,17 @@
     padding: 2rem 0;
 
 }
+
+.event-list-btn {
+    width: 50%;
+    background-color: #37aeab;
+    color: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    gap: 2rem;
+    margin: 2rem;
+
+}

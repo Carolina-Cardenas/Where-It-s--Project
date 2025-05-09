@@ -32,3 +32,39 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+@media screen and (max-width: 500px) and (min-width: 375px) {
+
+  .order-page,
+  .order-item-box,
+  .checkout-button,
+  .order-item-header,
+  .order-item-counter,
+  .event-name,
+  .event-date,
+  .event-time {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .event-name {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .order-item-counter {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .counter-cell {
+    font-size: 1.4rem;
+  }
+
+  .checkout-button {
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+}

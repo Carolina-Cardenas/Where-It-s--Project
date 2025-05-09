@@ -30,7 +30,7 @@ import "../Styles/TicketPage.css";
 
 function TicketPage() {
   const { ticketData } = useTicketStore();
-
+  console.log("📦 ticketData:", ticketData);
   if (!ticketData || !ticketData.cart?.length)
     return <p>No ticket data available</p>;
 
@@ -41,11 +41,8 @@ function TicketPage() {
       {ticketData.cart.map((item, index) => (
         <section className="ticket" key={index}>
           <article className="ticket__header"></article>
-          <h1 className="ticket__title">Ticket</h1>
-
           <section className="ticket__content">
             <p className="ticket__what">{item.name}</p>
-
             <div className="ticket__where">
               <strong>{item.where}</strong>
               <p>
@@ -53,7 +50,6 @@ function TicketPage() {
                   "Göteborgs universitet. Pedagogen, hus A"}
               </p>
             </div>
-
             <div className="ticket__when">
               <div>
                 <strong>WHEN</strong>
@@ -68,7 +64,6 @@ function TicketPage() {
                 <p>{item.when.to}</p>
               </div>
             </div>
-
             <div className="ticket__info">
               <strong>INFO</strong>
               <p>
@@ -76,13 +71,12 @@ function TicketPage() {
                 umbrella
               </p>
             </div>
-          </section>
-
-          <section className="ticket__barcode">
-            <Barcode value={`${ticketData.id}-${index}`} format="CODE128" />
-            <p className="barcode-text">
-              #{(ticketData.id + "-" + index).slice(-6)}
-            </p>
+            <section className="ticket__barcode">
+              <Barcode value={`${ticketData.id}-${index}`} format="CODE128" />
+              <p className="barcode-text">
+                #{(ticketData.id + "-" + index).slice(-6)}
+              </p>
+            </section>{" "}
           </section>
         </section>
       ))}
