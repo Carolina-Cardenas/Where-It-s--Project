@@ -1,6 +1,3 @@
-import SearchBar from "./SearchBar";
-import EventList from "../Features/EventList";
-import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
 import "../../Styles/EventCard.css";
 

@@ -2,7 +2,7 @@ import React from "react";
 import Barcode from "react-barcode";
 
 const BarcodeComponent = ({ event }) => {
-  if (!event) return <p>No event selected</p>;
+  if (!event || !event.id) return <p>No event selected</p>;
 
   return (
     <section className="ticket">

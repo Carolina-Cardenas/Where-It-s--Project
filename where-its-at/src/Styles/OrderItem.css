@@ -18,12 +18,13 @@
 }
 
 .order-item-header {
-    padding: 16px;
+    padding: 2rem;
     border-bottom: 1px solid #f3a5c7;
     text-align: center;
 }
 
 .order-item__event-name {
+    margin-top: 1rem;
     font-family: 'Sansita One', Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
@@ -31,6 +32,7 @@
     margin-bottom: 4px;
     text-align: left;
     margin-left: 1rem;
+    padding: 0.5rem;
 }
 
 

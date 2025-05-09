@@ -3,7 +3,6 @@ import "../../Styles/OrderItem.css";
 function OrderItem({ item, onAdd, onRemove }) {
   return (
     <section className="order-item-box">
-      {/* <div className="order-item-header"></div> */}
       <p className="order-item__event-name">{item.name}</p>
       <section className="order-item__date">
         <p className="order-item__event-date">

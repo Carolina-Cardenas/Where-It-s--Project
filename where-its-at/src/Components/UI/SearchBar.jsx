@@ -13,6 +13,7 @@ function SearchBar() {
 
   return (
     <section className="searchbar">
+      <h1 className="search-list-title">Event</h1>
       <form onSubmit={handleSearch} className="header__search-bar">
         <input
           className="header__input"
@@ -22,9 +23,6 @@ function SearchBar() {
           aria-label="Search"
           value={searchString}
         />
-        <button type="submit" className="header__form-btn">
-          Search
-        </button>
       </form>
     </section>
   );

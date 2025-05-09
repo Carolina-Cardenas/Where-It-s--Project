@@ -1,25 +1,49 @@
 import { useCartStore } from "../Stores/CartStore";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import OrderItem from "../Components/Features/OrderItem";
+import useTicketStore from "../Stores/TicketStore";
 import "../Styles/OrderPage.css";
 
 function OrderPage() {
   const { cart, addToCart, removeFromCart, clearCart } = useCartStore();
+  const { setTicketData } = useTicketStore();
   const [error, setError] = useState("");
-  console.log("🛒 Cart:", cart);
+  const navigate = useNavigate();
+
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
-  const handleCheckout = () => {
-    if (cart.length === 0) {
-      setError("Din varukorg är tom.");
-      return;
+  const sendOrder = async () => {
+    return new Promise((resolve) => setTimeout(resolve, 500));
+  };
+
+  const handleCheckout = async () => {
+    try {
+      if (cart.length === 0) {
+        setError("Du måste lägga till minst en biljett innan du kan beställa.");
+        return;
+      }
+      const orderDetails = {
+        id: generateTicketId(),
+        cart,
+        date: new Date().toLocaleString(),
+        total: totalPrice,
+      };
+
+      await sendOrder(cart);
+      setTicketData(orderDetails);
+      navigate("/ticket", { state: { cart } });
+      clearCart();
+    } catch (error) {
+      setError("Något gick fel vid beställningen. Försök igen.");
     }
-    alert(`Du skickade en order på ${totalPrice} sek!`);
-    clearCart();
-    setError("");
+  };
+
+  const generateTicketId = () => {
+    return Math.random().toString(36).substring(2, 8).toUpperCase();
   };
 
   return (
@@ -31,7 +55,6 @@ function OrderPage() {
         </div>
       )}
 
-      {/* Lista de productos en el carrito */}
       <div className="order-items">
         {cart.map((item) => (
           <OrderItem
@@ -43,20 +66,18 @@ function OrderPage() {
         ))}
       </div>
 
-      {/* Sección del total del pedido */}
       <section className="order-total">
         <p>Totalt värde på order</p>
         <div className="total-price">{totalPrice} sek</div>
       </section>
 
-      {/* Botón de envío */}
-      <button
+      {/* <button
         className="checkout-button"
         onClick={handleCheckout}
         aria-label="Bekräfta och skicka din beställning"
       >
         Skicka order
-      </button>
+      </button> */}
     </section>
   );
 }

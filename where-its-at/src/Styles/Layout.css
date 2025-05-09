@@ -1,17 +1,16 @@
 .LandingPage__footer {
     position: relative;
-    gap: 1rem;
+    gap: 2rem;
     bottom: 0;
     width: 100%;
     background-color: #d9649c;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 1rem 0;
     z-index: 100;
     padding-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .LandingPage__footer nav {
@@ -20,17 +19,17 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    justify-content: space-around;
 }
 
 .LandingPage__footer a {
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     color: white;
     font-weight: bold;
     font-size: 1rem;
     text-decoration: none;
     transition: transform 0.2s ease;
-    flex: 1;
+    gap: 2rem;
     font-size: 1.5rem;
 
 }

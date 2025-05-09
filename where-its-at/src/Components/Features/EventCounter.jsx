@@ -5,11 +5,14 @@ import "../../Styles/EventPage.css";
 function EventCounter() {
   const { selectedEvent, tickets, addTicket, removeTicket } = useEventStore();
 
-  if (!selectedEvent) return null;
+  if (!selectedEvent || !selectedEvent.price) return null;
+
+  const pricePerTicket = Number(selectedEvent.price);
+  const totalPrice = pricePerTicket * tickets;
 
   return (
     <section className="ticket-box">
-      <div className="ticket-price">{selectedEvent.price} sek</div>
+      <div className="ticket-price">{totalPrice} sek</div>
       <div className="ticket-counter-row">
         <div className="ticket-cell" onClick={removeTicket}>
           −

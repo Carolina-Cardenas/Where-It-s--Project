@@ -1,5 +1,6 @@
 .event-card__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -9,12 +10,13 @@
 }
 
 .event-card {
+    width: 100%;
     display: flex;
     gap: 3rem;
     background-color: transparent;
     padding: 1.5rem 0;
     border-bottom: 1px solid #666;
-    color: var(--clr-white);
+
 }
 
 .event-card__date {
@@ -39,10 +41,10 @@
 
 .event__title {
     font-size: 2.5rem;
-    color: #F56B9A;
+    color: #ff6e9e;
     font-weight: bold;
     font-style: italic;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .event-card__title {
