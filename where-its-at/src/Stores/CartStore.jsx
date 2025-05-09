@@ -35,6 +35,18 @@ export const useCartStore = create((set) => ({
         .filter((cartItem) => cartItem.quantity > 0),
     })),
   clearCart: () => set(() => ({ cart: [] })),
+
+  updateTicketQuantity: (itemId, delta) =>
+    set((state) => ({
+      cart: state.cart.map((item) =>
+        item.id === itemId
+          ? {
+              ...item,
+              quantity: Math.max(1, item.quantity + delta),
+            }
+          : item
+      ),
+    })),
 }));
 
 export default useCartStore;
