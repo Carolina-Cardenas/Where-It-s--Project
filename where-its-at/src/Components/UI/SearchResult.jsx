@@ -22,13 +22,13 @@ function SearchResults() {
       {error && <p>{error}</p>}
 
       {searchResults.length > 0 ? (
-        <div className="event-list-container">
+        <ul className="event-list-container">
           {searchResults.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
-        </div>
+        </ul>
       ) : (
-        !isLoading && <p>Inga resultat hittades.</p>
+        !isLoading && <p aria-live="polite">Inga resultat hittades.</p>
       )}
     </section>
   );

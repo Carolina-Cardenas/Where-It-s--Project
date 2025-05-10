@@ -16,7 +16,7 @@ function EventCard({ event }) {
         </span>
       </article>
 
-      <div className="event-card__info">
+      <section className="event-card__info">
         <Link to={`/event/${event.id}`} className="event-card__button">
           <p className="event-card__title">{event.name}</p>
           <p> {event.where}</p>
@@ -25,7 +25,7 @@ function EventCard({ event }) {
           </span>
           <p className="event-card__price">{event.price} sek</p>
         </Link>
-      </div>
+      </section>
     </section>
   );
 }

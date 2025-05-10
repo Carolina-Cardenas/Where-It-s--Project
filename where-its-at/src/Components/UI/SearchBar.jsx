@@ -19,7 +19,7 @@ function SearchBar() {
     <section className="searchbar">
       <h1 className="search-list-title">Event</h1>
       <form onSubmit={handleSearch} className="header__search-bar">
-        <div className="search-container">
+        <label htmlFor="search-input" className="search-container">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <input
             className="header__input"
@@ -29,7 +29,7 @@ function SearchBar() {
             value={searchString}
             onChange={(event) => setSearchString(event.target.value)}
           />
-        </div>
+        </label>
         <button
           className="search-button"
           type="submit"

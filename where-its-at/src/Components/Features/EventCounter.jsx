@@ -12,16 +12,16 @@ function EventCounter() {
 
   return (
     <section className="ticket-box">
-      <div className="ticket-price">{totalPrice} sek</div>
-      <div className="ticket-counter-row">
-        <div className="ticket-cell" onClick={removeTicket}>
+      <span className="ticket-price">{totalPrice} sek</span>
+      <section className="ticket-counter-row">
+        <button className="ticket-cell" onClick={removeTicket}>
           −
-        </div>
-        <div className="ticket-cell">{tickets}</div>
-        <div className="ticket-cell" onClick={addTicket}>
+        </button>
+        <span className="ticket-cell">{tickets}</span>
+        <button className="ticket-cell" onClick={addTicket}>
           +
-        </div>
-      </div>
+        </button>
+      </section>
     </section>
   );
 }

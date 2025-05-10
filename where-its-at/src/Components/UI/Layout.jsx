@@ -27,10 +27,24 @@ function Layout() {
       </main>
       {showFooter && (
         <footer className="LandingPage__footer">
-          <nav>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/events">Events</NavLink>
-            <NavLink to="/order">Order</NavLink>
+          <nav aria-label="Main Footer Navigation">
+            <ul>
+              <li>
+                <NavLink to="/" aria-label="Go to Home page">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/events" aria-label="Go to Events page">
+                  Events
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/order" aria-label="Go to Order page">
+                  Order
+                </NavLink>
+              </li>
+            </ul>
           </nav>
         </footer>
       )}

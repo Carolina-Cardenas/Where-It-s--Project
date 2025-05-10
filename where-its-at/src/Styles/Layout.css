@@ -38,13 +38,15 @@ main {
 
 }
 
-.LandingPage__footer nav {
+.LandingPage__footer nav,
+.LandingPage__footer nav ul {
     display: flex;
     gap: 2rem;
     justify-content: center;
     align-items: center;
     width: 100%;
     justify-content: space-around;
+    list-style-type: none;
 }
 
 .LandingPage__footer a {

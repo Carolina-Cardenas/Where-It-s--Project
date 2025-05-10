@@ -23,13 +23,16 @@ function EventListPage() {
     <section className="event-list-page">
       <SearchBar />
 
-      <div className="event-list-container">
+      <ul
+        className="event-list-container"
+        aria-label="Lista över tillgängliga evenemang"
+      >
         {events.length === 0 ? (
           <p>No events available</p>
         ) : (
           events.map((event) => <EventCard key={event.id} event={event} />)
         )}
-      </div>
+      </ul>
       <button className="event-list-btn" onClick={goToCart}>
         Lägg till varukorgen
       </button>
