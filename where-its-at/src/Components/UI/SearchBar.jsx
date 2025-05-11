@@ -22,6 +22,7 @@ function SearchBar() {
         <label htmlFor="search-input" className="search-container">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <input
+            id="search-input"
             className="header__input"
             type="text"
             placeholder="Search"

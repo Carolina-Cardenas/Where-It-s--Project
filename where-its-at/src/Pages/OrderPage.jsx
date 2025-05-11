@@ -36,7 +36,6 @@ function OrderPage() {
       await sendOrder(cart);
       setTicketData(orderDetails);
       navigate("/ticket", { state: { cart } });
-      clearCart();
     } catch (error) {
       setError("Något gick fel vid beställningen. Försök igen.");
     }
@@ -60,7 +59,7 @@ function OrderPage() {
         aria-label="Lista över varor i din beställning"
       >
         {cart.map((item) => (
-          <li>
+          <li className="order-items-list" key={item.id}>
             <OrderItem
               key={item.id}
               item={item}

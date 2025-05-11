@@ -36,6 +36,8 @@ export const useCartStore = create((set) => ({
     })),
   clearCart: () => set(() => ({ cart: [] })),
 
+  resetAll: () => set({ cart: [] }),
+
   updateTicketQuantity: (itemId, delta) =>
     set((state) => ({
       cart: state.cart.map((item) =>
