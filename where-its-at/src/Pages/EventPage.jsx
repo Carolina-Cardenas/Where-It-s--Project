@@ -8,26 +8,28 @@ import useEventStore from "../Stores/EventStore";
 function EventPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { fetchEvents, selectEvent, selectedEvent } = useEventStore();
+  const { fetchEvents, selectEvent, selectedEvent, resetAll } = useEventStore();
   const { cart, addToCart, updateTicketQuantity } = useCartStore();
 
   useEffect(() => {
+    let mounted = true;
     const loadData = async () => {
+      console.log("loadData");
+
       await fetchEvents();
+      if (mounted) selectEvent(id);
       selectEvent(id);
     };
+    resetAll();
     loadData();
-  }, [fetchEvents, id, selectEvent]);
-
-  useEffect(() => {
-    if (selectedEvent && !cart.find((item) => item.id === selectedEvent.id)) {
-      addToCart({ ...selectedEvent, quantity: 1 });
-    }
-  }, [selectedEvent, cart, addToCart]);
+    return () => {
+      mounted = false;
+    };
+  }, [fetchEvents, id, selectEvent, resetAll]);
 
   const cartItem = cart.find((item) => item.id === selectedEvent?.id);
-  const quantity = cartItem?.quantity || 1;
-
+  const quantity = cartItem?.quantity || 0;
+  console.log("cartItem", quantity);
   return (
     <article className="event-page">
       <h1 className="event-title">Event</h1>
@@ -48,7 +50,11 @@ function EventPage() {
             <section className="ticket-counter-row">
               <div
                 className="ticket-cell"
-                onClick={() => updateTicketQuantity(selectedEvent.id, -1)}
+                onClick={() => {
+                  if (cartItem) {
+                    updateTicketQuantity(selectedEvent.id, -1);
+                  }
+                }}
               >
                 −
               </div>
@@ -57,7 +63,13 @@ function EventPage() {
               </span>
               <div
                 className="ticket-cell"
-                onClick={() => updateTicketQuantity(selectedEvent.id, +1)}
+                onClick={() => {
+                  if (!cartItem) {
+                    addToCart({ ...selectedEvent, quantity: 1 });
+                  } else {
+                    updateTicketQuantity(selectedEvent.id, +1);
+                  }
+                }}
               >
                 +
               </div>
@@ -65,7 +77,7 @@ function EventPage() {
           </section>
 
           <button className="add-to-cart" onClick={() => navigate("/order")}>
-            Lägg i varukorgen
+            Till Varukorgen
           </button>
         </section>
       )}

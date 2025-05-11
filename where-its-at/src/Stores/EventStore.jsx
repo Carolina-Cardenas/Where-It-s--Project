@@ -18,19 +18,6 @@ const useEventStore = create((set) => ({
       set({ events: [] });
     }
   },
-
-  //   selectEvent: (eventId) =>
-  //     set((state) => {
-  //       const selected = state.events.find((event) => event.id === eventId);
-  //       return { selectedEvent: selected };
-  //     }),
-  //   addTicket: () => set((state) => ({ tickets: state.tickets + 1 })),
-  //   removeTicket: () =>
-  //     set((state) => ({ tickets: Math.max(1, state.tickets - 1) })),
-  //   resetAll: () => set({ events: [], selectedEvent: null, tickets: 1 }),
-  // }));
-
-  // export default useEventStore;
   selectEvent: (eventId) =>
     set((state) => {
       const selected = state.events.find((event) => event.id === eventId);
@@ -45,8 +32,8 @@ const useEventStore = create((set) => ({
     set({
       events: [],
       selectedEvent: null,
-      tickets: 1,
-      shouldResetEvents: false,
+      tickets: 0,
+      shouldResetEvents: true,
     }),
 }));
 

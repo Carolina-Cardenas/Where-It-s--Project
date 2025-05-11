@@ -80,7 +80,7 @@ function OrderPage() {
         onClick={handleCheckout}
         aria-label="Bekräfta och skicka din beställning"
       >
-        Skicka order
+        Beställ!
       </button>
     </section>
   );

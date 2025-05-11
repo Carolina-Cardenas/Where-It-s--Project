@@ -11,9 +11,7 @@ function EventListPage({ onSelectEvent }) {
   const {
     events,
     fetchEvents,
-    // shouldResetEvents,
-    // resetEventsList,
-    // setShouldResetEvents,
+   
   } = useEventStore();
   const navigate = useNavigate();
 
@@ -21,12 +19,7 @@ function EventListPage({ onSelectEvent }) {
     fetchEvents();
   }, [fetchEvents]);
 
-  // useEffect(() => {
-  //   if (shouldResetEvents) {
-  //     resetEventsList();
-  //     setShouldResetEvents(false);
-  //   }
-  // }, [shouldResetEvents, resetEventsList, setShouldResetEvents]);
+  
 
   const goToCart = () => {
     navigate("/order");
